@@ -1,6 +1,6 @@
 Novo Jogo
-Opções
+Opcoes
 Extras
 Sair
-Versão
+Versao
 Desconhecido

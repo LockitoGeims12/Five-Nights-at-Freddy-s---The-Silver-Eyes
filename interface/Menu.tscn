@@ -1,29 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
-[ext_resource path="res://interface/GameTitle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://interface/GameButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://interface/VersionIndicator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actors/MenuCar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interface/GameTitle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interface/GameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/VersionIndicator.tscn" type="PackedScene" id=5]
 
 [node name="Menu" type="Node"]
 script = ExtResource( 1 )
 
-[node name="GameTitle" parent="." instance=ExtResource( 2 )]
+[node name="MenuCar" parent="." instance=ExtResource( 2 )]
+position = Vector2( 140, 660 )
 
-[node name="NewGame" parent="." instance=ExtResource( 3 )]
+[node name="GameTitle" parent="." instance=ExtResource( 3 )]
+
+[node name="NewGame" parent="." instance=ExtResource( 4 )]
 position = Vector2( 800, 300 )
 
-[node name="Options" parent="." instance=ExtResource( 3 )]
+[node name="Options" parent="." instance=ExtResource( 4 )]
 position = Vector2( 800, 375 )
 ButtonType = 1
 
-[node name="Extras" parent="." instance=ExtResource( 3 )]
+[node name="Extras" parent="." instance=ExtResource( 4 )]
 position = Vector2( 800, 450 )
 ButtonType = 2
 
-[node name="Quit" parent="." instance=ExtResource( 3 )]
+[node name="Quit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 800, 525 )
 ButtonType = 3
 
-[node name="VersionIndicator" parent="." instance=ExtResource( 4 )]
+[node name="VersionIndicator" parent="." instance=ExtResource( 5 )]
 
