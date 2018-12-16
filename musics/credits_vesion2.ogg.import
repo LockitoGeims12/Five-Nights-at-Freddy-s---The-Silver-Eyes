@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/credits_vesion2.ogg-501284d9f85ce5de29d5868cf0800cc6.oggstr"
+
+[deps]
+
+source_file="res://musics/credits_vesion2.ogg"
+dest_files=[ "res://.import/credits_vesion2.ogg-501284d9f85ce5de29d5868cf0800cc6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

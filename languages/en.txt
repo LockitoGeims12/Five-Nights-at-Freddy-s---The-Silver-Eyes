@@ -1,0 +1,5 @@
+New Game
+Options
+Extras
+Quit
+Unknown
