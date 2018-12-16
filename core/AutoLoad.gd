@@ -11,7 +11,7 @@ var LANG = {
 	"VERSION": "",
 	"UNKNOWN": ""
 	}
-var GameLanguage = "pt"
+var GameLanguage = "en"
 
 func _ready():
 	var file = File.new()
