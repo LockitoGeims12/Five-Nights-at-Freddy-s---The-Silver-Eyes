@@ -2,4 +2,5 @@ Novo Jogo
 Opções
 Extras
 Sair
+Versão
 Desconhecido

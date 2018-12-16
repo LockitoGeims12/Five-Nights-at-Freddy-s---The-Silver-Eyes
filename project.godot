@@ -19,6 +19,10 @@ config/name="Five Nights at Freddy's - The Silver Eyes"
 run/main_scene="res://interface/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+AutoLoad="*res://core/AutoLoad.gd"
+
 [display]
 
 window/size/height=768

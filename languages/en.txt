@@ -2,4 +2,5 @@ New Game
 Options
 Extras
 Quit
+Version
 Unknown
