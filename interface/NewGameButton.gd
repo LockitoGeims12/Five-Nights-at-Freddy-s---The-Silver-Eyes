@@ -6,3 +6,6 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("mouse_left_button") && MouseIsOverButton:
 		print(name + " pressed")
+		var loadingscreen = AutoLoad.PRELOAD.LOADINGSCREEN
+		loadingscreen.instance()
+		get_tree().change_scene_to(loadingscreen)
