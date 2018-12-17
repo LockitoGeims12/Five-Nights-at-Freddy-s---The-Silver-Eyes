@@ -13,11 +13,12 @@ var LANG = {
 	"EXTRAS": "",
 	"QUIT": "",
 	"VERSION": "",
-	"UNKNOWN": ""
+	"UNKNOWN": "",
+	"HOWTOPLAY1": "",
+	"HOWTOPLAY2": "",
+	"HOWTOPLAY3": ""
 	}
 var GameLanguage = "en"
-
-var BlurAmount = 0
 
 func _ready():
 	if PRELOAD.LOADINGSCREEN == null:
