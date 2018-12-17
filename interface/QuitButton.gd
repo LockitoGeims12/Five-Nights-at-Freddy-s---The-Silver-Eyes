@@ -6,5 +6,4 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("mouse_left_button") && MouseIsOverButton:
 		print(name + " pressed")
-	elif event.is_action_released("mouse_left_button"):
-		print(name + " released")
+		get_tree().quit()

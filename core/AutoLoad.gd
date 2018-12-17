@@ -3,6 +3,13 @@ extends Node
 const GAME_NAME = "Five Nights at Freddy's - The Silver Eyes"
 const GAME_VERSION = "0.0.1"
 
+var NODES = {
+		"NEWGAMEBUTTON": null,
+		"OPTIONSBUTTON": null,
+		"EXTRASBUTTON": null,
+		"QUIT": null
+	}
+
 var LANG = {
 	"NEWGAME": "",
 	"OPTIONS": "",
