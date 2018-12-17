@@ -10,13 +10,13 @@ func _set_lighting(type):
 	var a
 	match type:
 		LIGHTINGTYPES.DARK:
-			a = 1
+			a = 255
 		LIGHTINGTYPES.MID_DARK:
-			a = 0.75
+			a = 192
 		LIGHTINGTYPES.LIGHT:
-			a = 0.5
+			a = 128
 		LIGHTINGTYPES.WITHOUT:
-			a = 0.25
+			a = 64
 	$Occular.modulate.a = a
 
 func _get_lighting():

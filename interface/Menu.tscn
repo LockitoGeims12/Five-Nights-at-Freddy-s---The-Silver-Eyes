@@ -32,7 +32,7 @@ script = ExtResource( 1 )
 position = Vector2( 140, 660 )
 
 [node name="Occular" parent="." instance=ExtResource( 8 )]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.752941 )
 
 [node name="GameTitle" parent="." instance=ExtResource( 9 )]
 
