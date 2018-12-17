@@ -1,25 +1,29 @@
 extends Node2D
 
-enum STATES { IDLE, MOVING}
+enum { IDLE, WALK}
+var State = IDLE
 
-const MAX_VELOCITY = 200
+const MAX_VELOCITY = 300
 
 var direction = Vector2()
-var velocity = 200
+var velocity = 300
 
 func _process(delta):
 	translate(direction * velocity * delta)
 
 func _input(event):
-	if event.is_action_pressed("move_up"):
-		direction.y = -1
-	elif event.is_action_pressed("move_down"):
-		direction.y = 1
-	elif event.is_action_pressed("move_left"):
-		direction.x = -1
-	elif event.is_action_pressed("move_right"):
-		direction.x = 1
-	elif event.is_action_released("move_up") or event.is_action_released("move_down"):
-		direction.y = 0
-	elif event.is_action_released("move_left") or event.is_action_released("move_right"):
-		direction.x = 0
+	match direction:
+		Vector2(0, -1):
+			$ActorSprite.animation = "walk_up"
+			State = WALK
+		Vector2(0, 1):
+			$ActorSprite.animation = "walk_down"
+			State = WALK
+		Vector2(-1, 0):
+			$ActorSprite.animation = "walk_right"
+			$ActorSprite.scale.x = -0.1
+			State = WALK
+		Vector2(1, 0):
+			$ActorSprite.animation = "walk_right"
+			$ActorSprite.scale.x = 0.1
+			State = WALK
