@@ -7,9 +7,6 @@ const MAX_VELOCITY = 200
 var direction = Vector2()
 var velocity = 200
 
-func _ready():
-	pass
-
 func _process(delta):
 	translate(direction * velocity * delta)
 
