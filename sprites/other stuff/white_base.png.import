@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-697acc627a7de37e37e6770b1d4a98dd.stex"
+path="res://.import/white_base.png-2a2a00f7ec7479ce7adb74981611f19c.stex"
 
 [deps]
 
-source_file="res://sprites/other stuff/light.png"
-dest_files=[ "res://.import/light.png-697acc627a7de37e37e6770b1d4a98dd.stex" ]
+source_file="res://sprites/other stuff/white_base.png"
+dest_files=[ "res://.import/white_base.png-2a2a00f7ec7479ce7adb74981611f19c.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
@@ -27,5 +27,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

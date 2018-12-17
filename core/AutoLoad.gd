@@ -15,7 +15,9 @@ var LANG = {
 	"VERSION": "",
 	"UNKNOWN": ""
 	}
-var GameLanguage = "fr"
+var GameLanguage = "en"
+
+var BlurAmount = 0
 
 func _ready():
 	if PRELOAD.LOADINGSCREEN == null:

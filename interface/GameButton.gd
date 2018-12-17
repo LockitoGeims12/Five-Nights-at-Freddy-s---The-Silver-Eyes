@@ -13,8 +13,10 @@ func _on_ButtonArea_mouse_entered():
 	set_process_input(true)
 	modulate = ButtonColors.MID_DARK
 	MouseIsOverButton = true
+	get_tree().call_group("focus", "_focus_enter")
 
 func _on_ButtonArea_mouse_exited():
 	set_process_input(false)
 	modulate = ButtonColors.LIGHT
 	MouseIsOverButton = false
+	get_tree().call_group("focus", "_focus_exit")
