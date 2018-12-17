@@ -3,6 +3,7 @@
 [ext_resource path="res://sprites/layers/forest_layer3.png" type="Texture" id=1]
 
 [node name="TreeLayer2" type="Sprite"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 texture = ExtResource( 1 )
 centered = false
 
