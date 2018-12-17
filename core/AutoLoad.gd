@@ -18,6 +18,10 @@ var LANG = {
 var GameLanguage = "en"
 
 func _ready():
+	if PRELOAD.LOADINGSCREEN == null:
+		OS.alert("Loading error")
+		get_tree().quit()
+	
 	var file = File.new()
 	file.open("res://languages/" + GameLanguage + ".txt", file.READ)
 	LANG.NEWGAME = file.get_line()
