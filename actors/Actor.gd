@@ -1,7 +1,8 @@
 extends Node2D
 
-enum { IDLE, WALK}
-var State = IDLE
+enum STATES { IDLE, WALKING, DOING_ACTION, }
+enum ACTIONS { DIE }
+var State = STATES.IDLE
 
 const MAX_VELOCITY = 300
 
@@ -15,15 +16,20 @@ func _input(event):
 	match direction:
 		Vector2(0, -1):
 			$ActorSprite.animation = "walk_up"
-			State = WALK
+			State = STATES.WALKING
 		Vector2(0, 1):
 			$ActorSprite.animation = "walk_down"
-			State = WALK
+			State = STATES.WALKING
 		Vector2(-1, 0):
 			$ActorSprite.animation = "walk_right"
 			$ActorSprite.scale.x = -0.1
-			State = WALK
+			State = STATES.WALKING
 		Vector2(1, 0):
 			$ActorSprite.animation = "walk_right"
 			$ActorSprite.scale.x = 0.1
-			State = WALK
+			State = STATES.WALKING
+
+func _do_action(action):
+	match action:
+		ACTIONS.DIE:
+			queue_free()
