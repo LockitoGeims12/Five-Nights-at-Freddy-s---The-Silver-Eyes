@@ -7,7 +7,7 @@
 
 extents = Vector2( 196.611, 41.3854 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
 resource_name = "FocusIn"
 length = 0.25
@@ -61,7 +61,7 @@ position = Vector2( 510, 98 )
 shape = SubResource( 1 )
 
 [node name="TitleAnimation" type="AnimationPlayer" parent="."]
-anims/FocusIn = SubResource( 2 )
+anims/FocusIn = SubResource( 4 )
 anims/FocusOut = SubResource( 3 )
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
