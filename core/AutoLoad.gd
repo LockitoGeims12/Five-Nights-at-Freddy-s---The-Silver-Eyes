@@ -20,6 +20,8 @@ var LANG = {
 	}
 var GameLanguage = "en"
 
+var ToLoadNow
+
 func _ready():
 	if PRELOAD.LOADINGSCREEN == null:
 		OS.alert("Loading error")
