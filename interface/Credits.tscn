@@ -25,12 +25,21 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="CreditsText" type="Label" parent="."]
+margin_top = 560.0
 margin_right = 1024.0
-margin_bottom = 768.0
+margin_bottom = 1328.0
 custom_fonts/font = ExtResource( 2 )
 text = "Artist:
 
 Code:
+PixelGameArt Studios (Henrique Lopes)
+
+Sounds:
+PixelGameArt Studios (Henrique Lopes)
+
+Music:
+
+PixelGameArt Studios (Henrique Lopes)
 
 Patreons:
 
@@ -44,5 +53,6 @@ volume_db = -80.0
 autoplay = true
 
 [node name="CreditsAnimation" type="AnimationPlayer" parent="."]
+autoplay = "Smooth"
 anims/Smooth = SubResource( 1 )
 
