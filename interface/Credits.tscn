@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://interface/Credits.gd" type="Script" id=1]
 [ext_resource path="res://fonts/default_font_14.tres" type="DynamicFont" id=2]
-[ext_resource path="res://musics/credits_vesion1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://fonts/default_font_26.tres" type="DynamicFont" id=3]
+[ext_resource path="res://musics/credits_vesion1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 
-resource_name = "Smooth"
-length = 5.0
+resource_name = "Run"
+length = 110.0
+step = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CreditsMusic:volume_db")
 tracks/0/interp = 1
@@ -20,26 +22,58 @@ tracks/0/keys = {
 "update": 0,
 "values": [ -80.0, -10.0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CreditsNode2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 100 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -1536 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CreditsNode2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 100, 110 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Credits" type="Node"]
 script = ExtResource( 1 )
 
-[node name="CreditsText" type="Label" parent="."]
-margin_top = 560.0
+[node name="CreditsNode2D" type="Node2D" parent="."]
+
+[node name="CreditsText" type="Label" parent="CreditsNode2D"]
+margin_top = 768.0
 margin_right = 1024.0
-margin_bottom = 1328.0
+margin_bottom = 1536.0
 custom_fonts/font = ExtResource( 2 )
-text = "Artist:
+text = "Silverware Studios and contributors
+
+Art:
+Draxis
+PGAS (Henrique Lopes)
 
 Code:
-PixelGameArt Studios (Henrique Lopes)
+PGAS (Henrique Lopes)
 
 Sounds:
-PixelGameArt Studios (Henrique Lopes)
+PGAS (Henrique Lopes)
 
 Music:
+TCS
+PGAS (Henrique Lopes)
 
-PixelGameArt Studios (Henrique Lopes)
+GitHub Contributors:
 
 Patreons:
 
@@ -47,12 +81,22 @@ Many thanks to all who have supported and still support this project."
 align = 1
 valign = 1
 
+[node name="TitleText" type="Label" parent="CreditsNode2D"]
+margin_top = 1536.0
+margin_right = 1024.0
+margin_bottom = 2304.0
+custom_fonts/font = ExtResource( 3 )
+text = "Five Nights at Freddy's
+The Silver Eyes"
+align = 1
+valign = 1
+
 [node name="CreditsMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = -80.0
 autoplay = true
 
 [node name="CreditsAnimation" type="AnimationPlayer" parent="."]
-autoplay = "Smooth"
-anims/Smooth = SubResource( 1 )
+autoplay = "Run"
+anims/Run = SubResource( 1 )
 
