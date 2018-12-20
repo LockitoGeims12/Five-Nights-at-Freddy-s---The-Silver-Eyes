@@ -1,16 +1,11 @@
 extends Label
 
-var MouseIsOverTitle = false
+func _on_Button_button_down():
+	var i = preload("res://interface/Credits.tscn")
+	get_tree().change_scene_to(i)
 
-func _input(event):
-	if event.is_action_pressed("mouse_left_button"):
-		var i = preload("res://interface/Credits.tscn")
-		get_tree().change_scene_to(i)
-
-func _on_Area2D_mouse_entered():
-	MouseIsOverTitle = true
+func _on_Button_mouse_entered():
 	$TitleAnimation.play("FocusIn")
 
-func _on_Area2D_mouse_exited():
-	MouseIsOverTitle = false
+func _on_Button_mouse_exited():
 	$TitleAnimation.play("FocusOut")

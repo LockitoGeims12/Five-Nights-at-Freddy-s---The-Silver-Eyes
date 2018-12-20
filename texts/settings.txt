@@ -1,0 +1,16 @@
+// Settings file format
+
+[Graphics]
+ResolutionWidth=1024
+ResolutionHeight=768
+ShadowMapping=true
+
+[Sounds]
+EffectsVolume=0.8
+MusicVolume=0.5
+
+[Game]
+Difficulty="easy"
+
+[Input]
+EnableController=true

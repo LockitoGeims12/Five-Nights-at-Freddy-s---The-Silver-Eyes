@@ -1,6 +1,6 @@
-New Game
-Options
-Extras
-Quit
-Version
-Unknown
+Nowa gra
+Opcje
+Dodatki
+Wyjœæ
+Wersja
+Ktoœ

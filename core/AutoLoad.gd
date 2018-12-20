@@ -3,10 +3,6 @@ extends Node
 const GAME_NAME = "Five Nights at Freddy's - The Silver Eyes"
 const GAME_VERSION = "0.0.1"
 
-var PRELOAD = {
-		"LOADINGSCREEN": preload("res://core/LoadingScreen.tscn"),
-	}
-
 var LANG = {
 	"NEWGAME": "",
 	"OPTIONS": "",
@@ -20,13 +16,11 @@ var LANG = {
 	}
 var GameLanguage = "en"
 
-var ToLoadNow
+var RESOURCES = {
+	"FOREST_MAP": null
+	}
 
 func _ready():
-	if PRELOAD.LOADINGSCREEN == null:
-		OS.alert("Loading error")
-		get_tree().quit()
-	
 	var file = File.new()
 	file.open("res://languages/" + GameLanguage + ".txt", file.READ)
 	LANG.NEWGAME = file.get_line()
