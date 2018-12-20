@@ -4,8 +4,6 @@ enum STATES { IDLE, WALKING, DOING_ACTION, }
 enum ACTIONS { DIE }
 var State = STATES.IDLE
 
-const MAX_VELOCITY = 300
-
 var direction = Vector2()
 var velocity = 300
 
