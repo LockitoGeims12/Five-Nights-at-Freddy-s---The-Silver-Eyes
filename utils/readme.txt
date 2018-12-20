@@ -1,0 +1,1 @@
+Here are some functions are very useful for the game
