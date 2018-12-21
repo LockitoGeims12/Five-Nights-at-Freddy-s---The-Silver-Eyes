@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Five Nights at Freddy's - The Silver Eyes"
 run/main_scene="res://interface/Menu.tscn"
+boot_splash/image="res://logo.png"
 boot_splash/bg_color=Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 config/icon="res://icon.png"
 
