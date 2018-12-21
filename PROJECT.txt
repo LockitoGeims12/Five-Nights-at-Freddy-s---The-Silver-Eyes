@@ -1,0 +1,6 @@
+// It is a basic workflow
+
+- Add classes and extend them
+- Create maps
+- Add classes and events to maps
+- DONE!
