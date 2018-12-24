@@ -14,6 +14,7 @@ var LANG = {
 	"HOWTOPLAY2": "",
 	"HOWTOPLAY3": ""
 	}
+
 var GameLanguage = "en"
 
 var RESOURCES = {
@@ -22,7 +23,7 @@ var RESOURCES = {
 
 func _ready():
 	var file = File.new()
-	file.open("res://languages/" + GameLanguage + ".txt", file.READ)
+	file.open("res://languages/" + str(GameLanguage) + ".txt", file.READ)
 	LANG.NEWGAME = file.get_line()
 	LANG.OPTIONS = file.get_line()
 	LANG.EXTRAS = file.get_line()
