@@ -15,7 +15,7 @@ var GAME = {
 	"Difficulty": "easy",
 }
 var INPUT = {
-	"EnableController": true
+	"DefaultSystem": true
 }
 
 func _ready():
@@ -26,11 +26,29 @@ func _ready():
 		_createSettings()
 
 func _loadSettings():
+	# loads the settings.ini file
+	
 	var file = ConfigFile.new()
 	file.load("settings.ini")
+	
+	# assign settings.ini content to game vars
+	
+	GRAPHICS.ResolutionWidth = file.get_value("Graphics", "ResolutionWidth", 1024)
+	GRAPHICS.ResolutionHeight = file.get_value("Graphics", "ResolutionHeight", 768)
+	GRAPHICS.EnableShaders = file.get_value("Graphics", "EnableShaders", false)
+	GRAPHICS.ShadowMapping = file.get_value("Graphics", "ShadowMapping", true)
+	SOUNDS.MaxFXPolyphony = file.get_value("Sounds", "MaxFXPolyphony", 16)
+	SOUNDS.EffectsVolume = file.get_value("Sounds", "EffectsVolume", 0.7)
+	SOUNDS.MusicVolume = file.get_value("Sounds", "MusicVolume", 0.8)
+	GAME.Difficulty = file.get_value("Game", "Difficulty", "easy")
+	INPUT.DefaultSystem = file.get_value("Input", "DefaultSystem", true)
+	
+	print("Settings file loaded")
+	_applySettings()
 
 func _createSettings():
 	var file = ConfigFile.new()
+	
 	file.set_value("Graphics", "ResolutionWidth", 1024)
 	file.set_value("Graphics", "ResolutionHeight", 768)
 	file.set_value("Graphics", "EnableShaders", false)
@@ -39,5 +57,10 @@ func _createSettings():
 	file.set_value("Sounds", "EffectsVolume", 0.7)
 	file.set_value("Sounds", "MusicVolume", 0.8)
 	file.set_value("Game", "Difficulty", "easy")
-	file.set_value("Input", "EnableController", true)
+	file.set_value("Input", "DefaultSystem", true)
 	file.save("settings.ini")
+	
+	print("Settings file created")
+
+func _applySettings():
+	OS.window_size = Vector2(GRAPHICS.ResolutionWidth, GRAPHICS.ResolutionHeight)
