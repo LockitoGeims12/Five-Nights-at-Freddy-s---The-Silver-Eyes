@@ -1,0 +1,1 @@
+Here are the animated elements (or appears a lot in the game)

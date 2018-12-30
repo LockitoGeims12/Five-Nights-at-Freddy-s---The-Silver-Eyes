@@ -1,0 +1,1 @@
+Here are core elements like singetons, useful scripts and scenes

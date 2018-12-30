@@ -1,0 +1,32 @@
+// Input settings file format
+// Default input settings
+
+// normal inputs
+
+[Input1]
+
+MoveUp="default"
+MoveDown="default"
+MoveLeft="default"
+MoveRight="default"
+Use="default"
+
+// additional inputs
+
+[Input2]
+
+MoveUp="default"
+MoveDown="default"
+MoveLeft="default"
+MoveRight="default"
+Use="default"
+
+// controller inputs
+
+[Input3]
+
+MoveUp="default"
+MoveDown="default"
+MoveLeft="default"
+MoveRight="default"
+Use="default"

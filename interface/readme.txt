@@ -1,0 +1,1 @@
+Here are some interface elements like the menu, HUD and others.

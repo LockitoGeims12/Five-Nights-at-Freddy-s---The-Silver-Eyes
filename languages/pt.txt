@@ -4,3 +4,6 @@ Extras
 Sair
 Versao
 Desconhecido
+Mover: W, A, S e D ou setas e E para usar
+Ou voce pode usar um controle
+Mover: Left Stick ou botoes D-Pad e X para usar

@@ -47,7 +47,11 @@ func _loadSettings():
 	_applySettings()
 
 func _createSettings():
+	# create the internal file
+	
 	var file = ConfigFile.new()
+	
+	# set values to the file
 	
 	file.set_value("Graphics", "ResolutionWidth", 1024)
 	file.set_value("Graphics", "ResolutionHeight", 768)
@@ -63,4 +67,7 @@ func _createSettings():
 	print("Settings file created")
 
 func _applySettings():
+	# apply settings that's possible to apply now
+	
 	OS.window_size = Vector2(GRAPHICS.ResolutionWidth, GRAPHICS.ResolutionHeight)
+	AudioServer.set_bus_volume_db("res://default_bus_layout.tres", 0)

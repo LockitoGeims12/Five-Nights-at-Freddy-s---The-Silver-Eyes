@@ -2,18 +2,24 @@
 // Default settings
 
 [Graphics]
-ResolutionWidth=1024
-ResolutionHeight=768
-EnableShaders=false
-ShadowMapping=true
+
+ResolutionWidth=1024 // resolution width
+ResolutionHeight=768 // resolution height
+EnableShaders=false // enable or disable shaders
+ShadowMapping=true // enable or disable shadow mapping (experimental)
 
 [Sounds]
-MaxFXPolyphony=16
-EffectsVolume=0.7
-MusicVolume=0.6
+
+MaxFXPolyphony=16 // max sounds per time
+EffectsVolume=0.7 // volume of all sound effects in the game
+MusicVolume=0.6 // volume of all musics in the game
+MaxAudioProcessing=8 // max sound effects applied over the audio
+EnableReverb=true // enable or disable reverb effects
 
 [Game]
-Difficulty="easy"
+
+Difficulty="normal" // game difficulty (no change for now)
 
 [Input]
-EnableController=true
+
+DefaultSystem=true // if there are no modifications in the input settings

@@ -1,0 +1,1 @@
+Here you can edit the language files (add or translate into many others languages)
