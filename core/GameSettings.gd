@@ -70,4 +70,5 @@ func _applySettings():
 	# apply settings that's possible to apply now
 	
 	OS.window_size = Vector2(GRAPHICS.ResolutionWidth, GRAPHICS.ResolutionHeight)
-	AudioServer.set_bus_volume_db("res://default_bus_layout.tres", 0)
+	AudioServer.set_bus_volume_db(0, 0)
+	AudioServer.set_bus_volume_db(1, 0)
