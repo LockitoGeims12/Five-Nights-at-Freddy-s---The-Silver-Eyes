@@ -19,9 +19,15 @@ func _loadState():
 	var file = File.new()
 	file.open_encrypted_with_pass(FilePath, File.READ, "DevelopersNeverDie")
 	
-	STATE.PLAYER_NAME = file.get_var("PLAYER_NAME")
-	STATE.PLAYER_XP = file.get_var("PLAYER_XP")
-	STATE.MAP = file.get_var("MAP")
+	if file.is_open():
+		STATE.PLAYER_NAME = file.get_var("PLAYER_NAME")
+		STATE.PLAYER_XP = file.get_var("PLAYER_XP")
+		STATE.MAP = file.get_var("MAP")
+		print("State file loaded")
+	else:
+		print("Error loading state files at " + FilePath)
+		file.close()
+		get_tree().quit()
 	
 	file.close()
 	
@@ -41,4 +47,9 @@ func _createState():
 
 func _deleteState():
 	var dir = Directory.new()
-	dir.remove(FilePath)
+	var file = File.new()
+	if file.file_exists(FilePath):
+		dir.remove(FilePath)
+		print("State file deleted")
+	else:
+		print("The state file does not exist")

@@ -1,7 +1,8 @@
 extends Node
 
 const GAME_NAME = "Five Nights at Freddy's - The Silver Eyes"
-const GAME_VERSION = "0.1.0"
+var DEV_STATE = "alpha" # alpha, beta or stable
+var GAME_VERSION = "0.1.0" + " " + DEV_STATE
 
 var LANG = {
 	"NEWGAME": "",
@@ -12,7 +13,10 @@ var LANG = {
 	"UNKNOWN": "",
 	"HOWTOPLAY1": "",
 	"HOWTOPLAY2": "",
-	"HOWTOPLAY3": ""
+	"HOWTOPLAY3": "",
+	"DIALOG1": "",
+	"DIALOG2": "",
+	"DIALOG3": ""
 	}
 
 var GameLanguage = "en"
