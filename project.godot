@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 [autoload]
 
 AutoLoad="*res://core/AutoLoad.gd"
+Lang="*res://core/Lang.gd"
 GameSettings="*res://core/GameSettings.gd"
 GameState="*res://core/GameState.gd"
 RPGMath="*res://utils/RPG/RPGMath.gd"
