@@ -1,5 +1,8 @@
 extends Node2D
 
+# This class is a representation of maps
+# It adds lighting support to maps that controls the ocullar alpha
+
 enum LIGHTINGTYPES { DARK, MID_DARK, LIGHT, WITHOUT}
 var LightingType setget _set_lighting, _get_lighting
 
@@ -7,17 +10,19 @@ func _ready():
 	_set_lighting(LIGHTINGTYPES.WITHOUT)
 
 func _set_lighting(type):
-	var a
+	var _thisAlpha
 	match type:
 		LIGHTINGTYPES.DARK:
-			a = 255
+			_thisAlpha = 255
 		LIGHTINGTYPES.MID_DARK:
-			a = 192
+			_thisAlpha = 192
 		LIGHTINGTYPES.LIGHT:
-			a = 128
+			_thisAlpha = 128
 		LIGHTINGTYPES.WITHOUT:
-			a = 64
-	$Occular.modulate.a = a
+			_thisAlpha = 64
+	$Occular.modulate.a = _thisAlpha
+	
+	print("")
 
 func _get_lighting():
 	return(LightingType)

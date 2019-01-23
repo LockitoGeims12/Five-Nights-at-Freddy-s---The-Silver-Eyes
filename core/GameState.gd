@@ -1,5 +1,7 @@
 extends Node
 
+# This class loads, save and applies game data like resolution
+
 var STATE = {
 	"PLAYER_NAME": "Player",
 	"PLAYER_XP": 0,
