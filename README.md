@@ -1,7 +1,6 @@
-# Five-Nights-at-Freddy-s---The-Silver-Eyes
-Five Nights at Freddy's - The Silver Eyes
+# Five Nights at Freddy's - The Silver Eyes
 
-Godot 3.1 Alpha 3
+Godot 3.1 Beta 1
 
 GameJolt Link:
 
