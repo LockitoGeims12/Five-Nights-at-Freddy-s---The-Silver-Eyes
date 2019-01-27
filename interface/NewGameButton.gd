@@ -1,7 +1,7 @@
 extends "res://interface/GameButton.gd"
 
 func _ready():
-	$ButtonText.text = AutoLoad.LANG.NEWGAME
+	$ButtonText.text = Lang.LANG.NEWGAME
 
 func _on_Button_mouse_down():
 	AutoLoad.RESOURCES.FOREST_MAP = load("res://maps/ForestMap.tscn")

@@ -1,14 +1,17 @@
 extends Node
 
-# This class loads, save and applies game data like resolution
+# This class loads, save and applies player's game data
 
 var STATE = {
 	"PLAYER_NAME": "Player",
+	"PLAYER_LEVEL": 1,
 	"PLAYER_XP": 0,
 	"MAP": "Forest"
 	}
 
-var FilePath = "user://game_data.dat"
+var FilePath = "user://game_state.dat"
+
+var Key = "99876827" # encryptation key
 
 func _ready():
 	var file = File.new()
@@ -19,37 +22,29 @@ func _ready():
 
 func _loadState():
 	var file = File.new()
-	file.open_encrypted_with_pass(FilePath, File.READ, "DevelopersNeverDie")
+	file.open_encrypted_with_pass(FilePath, File.READ, Key)
 	
-	if file.is_open():
-		STATE.PLAYER_NAME = file.get_var("PLAYER_NAME")
-		STATE.PLAYER_XP = file.get_var("PLAYER_XP")
-		STATE.MAP = file.get_var("MAP")
-		print("State file loaded")
-	else:
-		print("Error loading state files at " + FilePath)
-		file.close()
-		get_tree().quit()
-	
+	STATE.PLAYER_NAME = file.get_var()
+	STATE.PLAYER_LEVEL = file.get_var()
+	STATE.PLAYER_XP = file.get_var()
+	STATE.MAP = file.get_var()
 	file.close()
-	
-	print(STATE)
 
 func _createState():
 	var file = File.new()
-	file.open_encrypted_with_pass(FilePath, File.WRITE, "DevelopersNeverDie")
+	file.open_encrypted_with_pass(FilePath, File.WRITE, Key)
 	
 	file.store_var(STATE.PLAYER_NAME)
+	file.store_var(STATE.PLAYER_LEVEL)
 	file.store_var(STATE.PLAYER_XP)
 	file.store_var(STATE.MAP)
 	
 	file.close()
-	
-	print(FilePath + " created")
 
 func _deleteState():
 	var dir = Directory.new()
 	var file = File.new()
+	
 	if file.file_exists(FilePath):
 		dir.remove(FilePath)
 		print("State file deleted")
