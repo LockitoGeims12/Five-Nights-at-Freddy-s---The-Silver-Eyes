@@ -15,5 +15,5 @@ https://www.patreon.com/blackbeargames
 
 ### Criterias:
 
-- The main criteria we use is the closed and open issues: example. (5 / 30) * 100
-- Estimated commits to finish: 750
+- The main criteria we use is the closed and open issues: eg. (5 / 30) * 100
+- Estimated commits to finish (we use estimated commits): eg. (64 / 750) * 100
