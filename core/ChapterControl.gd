@@ -1,8 +1,8 @@
 extends Node
 
-# Chapter control system
+# chapter control system
 
-const CHAPTER_SUPPORT = [1] # Array containing all supported chapters
+const CHAPTER_SUPPORT = [1] # array containing all supported chapters
 
 func _ready():
 	pass

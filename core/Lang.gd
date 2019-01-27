@@ -1,10 +1,11 @@
 extends Node
 
-# Current language constant
+# current language constant
+# it's not possible to change the language inside the game
 
 const LANGUAGE = "en"
 
-# Dict containing all the language keys (that can not be changed at the time)
+# dict containing all the language keys (that can not be changed at the time)
 
 var LANG = {
 	"NEWGAME": "",

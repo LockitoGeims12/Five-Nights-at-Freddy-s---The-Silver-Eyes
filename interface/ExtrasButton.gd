@@ -1,5 +1,7 @@
 extends "res://interface/GameButton.gd"
 
+# extras button
+
 func _ready():
 	$ButtonText.text = Lang.LANG.EXTRAS
 

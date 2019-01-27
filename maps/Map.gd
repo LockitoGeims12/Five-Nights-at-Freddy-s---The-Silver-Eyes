@@ -1,6 +1,6 @@
 extends Node2D
 
-# This class is a representation of maps
+# This class is just a base class for all maps
 # It adds lighting support to maps that controls the ocullar alpha
 
 enum LIGHTINGTYPES { DARK, MID_DARK, LIGHT, WITHOUT}
