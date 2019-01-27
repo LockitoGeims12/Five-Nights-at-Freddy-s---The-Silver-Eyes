@@ -11,7 +11,7 @@ https://gamejolt.com/games/fnaftse/371955
 https://www.patreon.com/thesilvereyes
 https://www.patreon.com/blackbeargames
 
-## Estimated Development Progress: 12,7%
+## Estimated Development Progress: 12,9%
 
 ### Criterias:
 
