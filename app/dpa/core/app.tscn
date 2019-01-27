@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://core/app.gd" type="Script" id=1]
 [ext_resource path="res://art/background.png" type="Texture" id=2]
 [ext_resource path="res://art/white.png" type="Texture" id=3]
+[ext_resource path="res://core/ball.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Shader" id=1]
 
@@ -17,7 +18,7 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 
 shader = SubResource( 1 )
-shader_param/amount = 5.0
+shader_param/amount = 4.0
 
 [sub_resource type="Animation" id=3]
 
@@ -45,6 +46,9 @@ modulate = Color( 1, 1, 1, 0.0980392 )
 scale = Vector2( 12.5, 9.375 )
 texture = ExtResource( 2 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="tex" type="TextureRect" parent="."]
 material = SubResource( 2 )
@@ -53,12 +57,68 @@ margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="balls" type="Node2D" parent="."]
+
+[node name="ball" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.858166, 0.880223, 0.578121, 0.5 )
+position = Vector2( 257.706, 125.858 )
+
+[node name="ball2" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.957617, 0.692771, 0.849963, 0.5 )
+position = Vector2( 223.076, 108.109 )
+
+[node name="ball3" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.696031, 0.840384, 0.556864, 0.5 )
+position = Vector2( 21.7876, 144.768 )
+
+[node name="ball4" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.758431, 0.995893, 0.946949, 0.5 )
+position = Vector2( 231.621, 142.54 )
+
+[node name="ball5" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.895644, 0.54506, 0.522446, 0.5 )
+position = Vector2( 108.603, 172.992 )
+
+[node name="ball6" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.744343, 0.6571, 0.59325, 0.5 )
+position = Vector2( 65.3885, -51.622 )
+
+[node name="ball7" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.963598, 0.823044, 0.530106, 0.5 )
+position = Vector2( -3.19522, 121.783 )
+
+[node name="ball8" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.824894, 0.812064, 0.859765, 0.5 )
+position = Vector2( 49.6329, 13.7353 )
+
+[node name="ball9" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.563172, 0.506671, 0.510858, 0.5 )
+position = Vector2( 264.281, 147.967 )
+
+[node name="ball10" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.963444, 0.531363, 0.701603, 0.5 )
+position = Vector2( 311.146, 147.366 )
+
+[node name="ball11" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.599203, 0.972307, 0.648971, 0.5 )
+position = Vector2( 193.382, -19.0658 )
+
+[node name="ball12" parent="balls" instance=ExtResource( 4 )]
+modulate = Color( 0.546669, 0.71454, 0.680588, 0.5 )
+position = Vector2( 54.5887, 38.0138 )
 
 [node name="alpha" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 0.490196 )
 scale = Vector2( 12.5, 9.375 )
 texture = ExtResource( 3 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="label" type="Label" parent="."]
 margin_right = 800.0
@@ -66,6 +126,9 @@ margin_bottom = 600.0
 text = "Development Progress: 100%"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="anim" type="AnimationPlayer" parent="."]
 autoplay = "cycle"
