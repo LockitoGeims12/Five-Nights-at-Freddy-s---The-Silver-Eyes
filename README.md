@@ -6,6 +6,7 @@ GameJolt Link:
 
 https://gamejolt.com/games/fnaftse/371955
 
-Patreon Link:
+Patreon Links:
 
 https://www.patreon.com/thesilvereyes
+https://www.patreon.com/blackbeargames
