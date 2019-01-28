@@ -1,6 +1,6 @@
 # Five Nights at Freddy's - The Silver Eyes
 
-The current version used is Godot 3.1 Beta 1, but you can use the version you want from Godot 3.0. 
+The current version used is Godot 3.1 Beta 3, but you can use the version you want from Godot 3.0. 
 
 ## GameJolt Link:
 
