@@ -13,7 +13,7 @@ var GRAPHICS = {
 }
 var SOUNDS = {
 	"MaxFXPolyphony": 16,
-	"EffectsVolume": 0.7,
+	"FXVolume": 0.7,
 	"MusicVolume": 0.8
 }
 var GAME = {
@@ -75,7 +75,7 @@ func _update_settings():
 	_config.set_value("Graphics", "EnableShaders", GRAPHICS.EnableShaders)
 	_config.set_value("Graphics", "ShadowMapping", GRAPHICS.ShadowMapping)
 	_config.set_value("Sounds", "MaxFXPolyphony", SOUNDS.MaxFXPolyphony)
-	_config.set_value("Sounds", "EffectsVolume", SOUNDS.FXVolume)
+	_config.set_value("Sounds", "FXVolume", SOUNDS.FXVolume)
 	_config.set_value("Sounds", "MusicVolume", SOUNDS.MusicVolume)
 	_config.set_value("Game", "Difficulty", GAME.Difficulty)
 	_config.set_value("Input", "DefaultSystem", INPUT.DefaultSystem)
