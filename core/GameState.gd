@@ -1,52 +1,47 @@
 extends Node
 
-# This class loads, save and applies player's game data
-
-var STATE = {
+var game_state = {
 	"PLAYER_NAME": "Player",
 	"PLAYER_LEVEL": 1,
 	"PLAYER_XP": 0,
 	"MAP": "Forest"
 	}
-
-var FilePath = "user://game_state.dat"
-
-var Key = "99876827" # encryptation key
+var file_path = "user://game_state.dat"
+var key = "DSPbuyyWpfG6HhN6"
 
 func _ready():
 	var file = File.new()
-	if file.file_exists(FilePath):
-		_loadState()
+	if file.file_exists(file_path):
+		_load_state()
 	else:
-		_createState()
+		_create_state()
 
-func _loadState():
+func _load_state():
 	var file = File.new()
-	file.open_encrypted_with_pass(FilePath, File.READ, Key)
+	file.open_encrypted_with_pass(file_path, File.READ, key)
 	
-	STATE.PLAYER_NAME = file.get_var()
-	STATE.PLAYER_LEVEL = file.get_var()
-	STATE.PLAYER_XP = file.get_var()
-	STATE.MAP = file.get_var()
+	game_state.PLAYER_NAME = file.get_var()
+	game_state.PLAYER_LEVEL = file.get_var()
+	game_state.PLAYER_XP = file.get_var()
+	game_state.MAP = file.get_var()
 	file.close()
 
-func _createState():
+func _create_state():
 	var file = File.new()
-	file.open_encrypted_with_pass(FilePath, File.WRITE, Key)
+	file.open_encrypted_with_pass(file_path, File.WRITE, key)
 	
-	file.store_var(STATE.PLAYER_NAME)
-	file.store_var(STATE.PLAYER_LEVEL)
-	file.store_var(STATE.PLAYER_XP)
-	file.store_var(STATE.MAP)
-	
+	file.store_var(game_state.PLAYER_NAME)
+	file.store_var(game_state.PLAYER_LEVEL)
+	file.store_var(game_state.PLAYER_XP)
+	file.store_var(game_state.MAP)
 	file.close()
 
-func _deleteState():
+func _delete_state():
 	var dir = Directory.new()
 	var file = File.new()
 	
-	if file.file_exists(FilePath):
-		dir.remove(FilePath)
+	if file.file_exists(file_path):
+		dir.remove(file_path)
 		print("State file deleted")
 	else:
 		print("The state file does not exist")

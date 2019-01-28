@@ -1,8 +1,13 @@
 extends Node
 
+# keys by section
+
 var GRAPHICS = {
-	"ResolutionWidth": 1024,
-	"ResolutionHeight": 768,
+	"WindowX": 0,
+	"WindowY": 0,
+	"Width": 1024.0,
+	"Height": 768.0,
+	"WindowState": "Normal",
 	"EnableShaders": false,
 	"ShadowMapping": true
 }
@@ -21,54 +26,57 @@ var INPUT = {
 func _ready():
 	var file = File.new()
 	if file.file_exists("settings.ini"):
-		_loadSettings()
+		_load_settings()
 	else:
-		_createSettings()
+		_create_settings()
 
-func _loadSettings():
-	# loads the settings.ini file
-	
-	var file = ConfigFile.new()
-	file.load("settings.ini")
-	
-	# assign settings.ini content to game vars
-	
-	GRAPHICS.ResolutionWidth = file.get_value("Graphics", "ResolutionWidth", 1024)
-	GRAPHICS.ResolutionHeight = file.get_value("Graphics", "ResolutionHeight", 768)
-	GRAPHICS.EnableShaders = file.get_value("Graphics", "EnableShaders", false)
-	GRAPHICS.ShadowMapping = file.get_value("Graphics", "ShadowMapping", true)
-	SOUNDS.MaxFXPolyphony = file.get_value("Sounds", "MaxFXPolyphony", 16)
-	SOUNDS.EffectsVolume = file.get_value("Sounds", "EffectsVolume", 0.7)
-	SOUNDS.MusicVolume = file.get_value("Sounds", "MusicVolume", 0.8)
-	GAME.Difficulty = file.get_value("Game", "Difficulty", "easy")
-	INPUT.DefaultSystem = file.get_value("Input", "DefaultSystem", true)
-	
-	print("Settings file loaded")
-	_applySettings()
+func _load_settings():
+	var _file = ConfigFile.new()
+	_file.load("settings.ini")
+	GRAPHICS.WindowX = _file.get_value("Graphics", "WindowX", 0)
+	GRAPHICS.WindowY = _file.get_value("Graphics", "WindowY", 0) 
+	GRAPHICS.Width = _file.get_value("Graphics", "Width", 1024.0)
+	GRAPHICS.Height = _file.get_value("Graphics", "Height", 768.0)
+	GRAPHICS.WindowState = _file.get_value("Graphics", "WindowState", "Normal")
+	GRAPHICS.EnableShaders = _file.get_value("Graphics", "EnableShaders", false)
+	GRAPHICS.ShadowMapping = _file.get_value("Graphics", "ShadowMapping", true)
+	SOUNDS.MaxFXPolyphony = _file.get_value("Sounds", "MaxFXPolyphony", 16)
+	SOUNDS.EffectsVolume = _file.get_value("Sounds", "EffectsVolume", 0.7)
+	SOUNDS.MusicVolume = _file.get_value("Sounds", "MusicVolume", 0.8)
+	GAME.Difficulty = _file.get_value("Game", "Difficulty", "easy")
+	INPUT.DefaultSystem = _file.get_value("Input", "DefaultSystem", true)
+	_apply_settings()
 
-func _createSettings():
-	# create the internal file
-	
-	var file = ConfigFile.new()
-	
-	# set values to the file
-	
-	file.set_value("Graphics", "ResolutionWidth", 1024)
-	file.set_value("Graphics", "ResolutionHeight", 768)
-	file.set_value("Graphics", "EnableShaders", false)
-	file.set_value("Graphics", "ShadowMapping", true)
-	file.set_value("Sounds", "MaxFXPolyphony", 16)
-	file.set_value("Sounds", "EffectsVolume", 0.7)
-	file.set_value("Sounds", "MusicVolume", 0.8)
-	file.set_value("Game", "Difficulty", "easy")
-	file.set_value("Input", "DefaultSystem", true)
-	file.save("settings.ini")
-	
-	print("Settings file created")
+func _create_settings():
+	var _config = ConfigFile.new()
+	_config.set_value("Graphics", "Width", 1024.0)
+	_config.set_value("Graphics", "Height", 768.0)
+	_config.set_value("Graphics", "EnableShaders", false)
+	_config.set_value("Graphics", "ShadowMapping", true)
+	_config.set_value("Sounds", "MaxFXPolyphony", 16)
+	_config.set_value("Sounds", "EffectsVolume", 0.7)
+	_config.set_value("Sounds", "MusicVolume", 0.8)
+	_config.set_value("Game", "Difficulty", "easy")
+	_config.set_value("Input", "DefaultSystem", true)
+	_config.save("settings.ini")
 
-func _applySettings():
-	# apply settings that's possible to apply now
-	
-	OS.window_size = Vector2(GRAPHICS.ResolutionWidth, GRAPHICS.ResolutionHeight)
+func _apply_settings():
+	OS.window_position = Vector2(GRAPHICS.WindowX, GRAPHICS.WindowY)
+	OS.window_size = Vector2(GRAPHICS.Width, GRAPHICS.Height)
 	AudioServer.set_bus_volume_db(0, 0)
-	AudioServer.set_bus_volume_db(1, 0)
+
+func _update_settings():
+	GRAPHICS.ResolutionWidth = OS.window_size.x
+	GRAPHICS.ResolutionHeight = OS.window_size.y
+	
+	var _config = ConfigFile.new()
+	_config.set_value("Graphics", "ResolutionWidth", GRAPHICS.ResolutionWidth)
+	_config.set_value("Graphics", "ResolutionHeight", GRAPHICS.ResolutionHeight)
+	_config.set_value("Graphics", "EnableShaders", GRAPHICS.EnableShaders)
+	_config.set_value("Graphics", "ShadowMapping", GRAPHICS.ShadowMapping)
+	_config.set_value("Sounds", "MaxFXPolyphony", SOUNDS.MaxFXPolyphony)
+	_config.set_value("Sounds", "EffectsVolume", SOUNDS.FXVolume)
+	_config.set_value("Sounds", "MusicVolume", SOUNDS.MusicVolume)
+	_config.set_value("Game", "Difficulty", GAME.Difficulty)
+	_config.set_value("Input", "DefaultSystem", INPUT.DefaultSystem)
+	_config.save("settings.ini")
