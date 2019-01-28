@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/charlle_down.png-958c37b0dd5eb95b09ecc654f6faedea.stex"
+path="res://.import/07.png-d39e7be5a65ca8f3482f276771e77710.stex"
 
 [deps]
 
-source_file="res://sprites/humans/charlle/charlle_down.png"
-dest_files=[ "res://.import/charlle_down.png-958c37b0dd5eb95b09ecc654f6faedea.stex" ]
+source_file="res://sprites/humans/charlle/walk_down/07.png"
+dest_files=[ "res://.import/07.png-d39e7be5a65ca8f3482f276771e77710.stex" ]
 
 [params]
 
