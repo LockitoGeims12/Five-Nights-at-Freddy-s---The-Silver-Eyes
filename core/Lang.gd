@@ -5,7 +5,7 @@ extends Node
 
 const LANGUAGE = "en"
 
-# Dict containing all the language keys (that can not be changed at the time)
+# Dict containing all the language keys
 
 var LANG = {
 	"NEWGAME": "",
