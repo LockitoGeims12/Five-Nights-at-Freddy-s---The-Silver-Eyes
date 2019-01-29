@@ -6,8 +6,8 @@ var game_state = {
 	"PLAYER_XP": 0,
 	"MAP": "Forest"
 	}
-var file_path = "user://game_state.dat"
-var key = "DSPbuyyWpfG6HhN6"
+var file_path = "user://game_state.dat" # the game data file path
+var key = "DSPbuyyWpfG6HhN6" # a random key
 
 func _ready():
 	var file = File.new()
