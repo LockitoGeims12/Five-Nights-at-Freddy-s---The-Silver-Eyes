@@ -1,5 +1,7 @@
 extends Node
 
+var file_path = "settings.ini"
+
 # Keys by section
 
 var GRAPHICS = {
@@ -29,7 +31,7 @@ func _ready():
 #	timer.start()
 	
 	var file = File.new()
-	if file.file_exists("settings.ini"):
+	if file.file_exists(file_path):
 		_load_settings()
 	else:
 		GRAPHICS.Width = OS.get_screen_size().x
@@ -40,7 +42,7 @@ func _ready():
 
 func _load_settings():
 	var _file = ConfigFile.new()
-	_file.load("settings.ini")
+	_file.load(file_path)
 	GRAPHICS.WindowX = _file.get_value("Graphics", "WindowX", GRAPHICS.WindowX)
 	GRAPHICS.WindowY = _file.get_value("Graphics", "WindowY", GRAPHICS.WindowY)
 	GRAPHICS.Width = _file.get_value("Graphics", "Width", OS.get_screen_size().x)
@@ -59,7 +61,7 @@ func _create_settings():
 	_config.set_value("Graphics", "Maximized", GRAPHICS.Maximized)
 	_config.set_value("Sounds", "FXVolume", SOUNDS.FXVolume)
 	_config.set_value("Sounds", "MusicVolume", SOUNDS.MusicVolume)
-	_config.save("settings.ini")
+	_config.save(file_path)
 
 func _apply_settings():
 	OS.window_position = Vector2(GRAPHICS.WindowX, GRAPHICS.WindowY)
@@ -81,4 +83,4 @@ func _update_settings():
 	_config.set_value("Graphics", "Maximized", GRAPHICS.Maximized)
 	_config.set_value("Sounds", "FXVolume", SOUNDS.FXVolume)
 	_config.set_value("Sounds", "MusicVolume", SOUNDS.MusicVolume)
-	_config.save("settings.ini")
+	_config.save(file_path)
