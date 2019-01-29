@@ -61,7 +61,7 @@ autoplay = true
 bus = "FX"
 
 [node name="CrowSound" parent="." instance=ExtResource( 17 )]
-volume_db = -25.0
+volume_db = -30.0
 
 [node name="ForestAmbientSound" parent="." instance=ExtResource( 18 )]
 volume_db = -15.0

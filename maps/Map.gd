@@ -10,19 +10,17 @@ func _ready():
 	_set_lighting(LIGHTINGTYPES.WITHOUT)
 
 func _set_lighting(type):
-	var _thisAlpha
+	var _alpha
 	match type:
 		LIGHTINGTYPES.DARK:
-			_thisAlpha = 255
+			_alpha = 255
 		LIGHTINGTYPES.MID_DARK:
-			_thisAlpha = 192
+			_alpha = 192
 		LIGHTINGTYPES.LIGHT:
-			_thisAlpha = 128
+			_alpha = 128
 		LIGHTINGTYPES.WITHOUT:
-			_thisAlpha = 64
-	$Occular.modulate.a = _thisAlpha
-	
-	print("")
+			_alpha = 64
+	$Occular.modulate.a = _alpha
 
 func _get_lighting():
 	return(LightingType)

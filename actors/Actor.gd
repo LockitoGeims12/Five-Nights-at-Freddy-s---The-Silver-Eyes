@@ -1,7 +1,6 @@
 extends Node2D
 
 enum STATES { IDLE, WALKING, DOING_ACTION, }
-enum ACTIONS { DIE }
 var State = STATES.IDLE
 
 var direction = Vector2()
@@ -26,8 +25,3 @@ func _input(event):
 			$ActorSprite.animation = "walk_right"
 			$ActorSprite.scale.x = 0.1
 			State = STATES.WALKING
-
-func _do_action(action):
-	match action:
-		ACTIONS.DIE:
-			queue_free()

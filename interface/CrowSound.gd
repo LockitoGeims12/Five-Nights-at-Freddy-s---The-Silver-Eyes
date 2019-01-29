@@ -1,14 +1,17 @@
 extends AudioStreamPlayer
 
-export(float) var max_pitch_scale = 0.1 # for plus and minus
-export(float) var max_pan = 0.5 # for the two sides
+export(Vector2) var var_time = Vector2(15, 40)
+export(float) var var_pitch_scale = 0.1
+export(float) var var_pan = 0.5
+export(Vector2) var var_volume = Vector2(-30, -40)
 
 func _on_Timer_timeout():
 	var idx = AudioServer.get_bus_index("Crow")
 	var panner_effect = AudioServer.get_bus_effect(idx, 0)
 	randomize()
-	pitch_scale = rand_range(1 - max_pitch_scale, 1 + max_pitch_scale)
-	$Timer.wait_time = randi()%80+20
-	volume_db = randi()%-20-30
-	panner_effect.pan = rand_range(-max_pan, max_pan)
+	pitch_scale = rand_range(1 - var_pitch_scale, 1 + var_pitch_scale)
+	$Timer.wait_time = rand_range(var_time.x, var_time.y)
+	volume_db = rand_range(var_volume.x, var_volume.y)
+	panner_effect.pan = rand_range(-var_pan, var_pan)
 	play()
+	$Timer.start()

@@ -7,12 +7,12 @@ func _damage(attack, defense):
 	print("Damage: " + str(_thisDamage))
 	return _thisDamage # calculates damage and returns it
 
-func _nextLevelXP(currentLevel):
+func _next_level_xp(currentLevel):
 	var _thisNextXP = (currentLevel * 500) + (currentLevel * 250)
 	print("Next level XP: " + str(_thisNextXP))
 	return _thisNextXP # calculates the xp to the next level
 
-func _XP(playerLevel, enemyLevel):
+func _xp(playerLevel, enemyLevel):
 	var _thisXP = (playerLevel * enemyLevel) * 100 + (enemyLevel - playerLevel) * 100
 	print("XP: " + str(_thisXP))
 	return _thisXP # calculates won xp when the player won a monster and returns it

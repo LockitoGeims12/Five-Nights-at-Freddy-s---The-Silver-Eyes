@@ -1,6 +1,6 @@
 extends Node
 
-# game informations constants
+# Game informations constants
 
 const GAME_NAME = "Five Nights at Freddy's - The Silver Eyes" # Constant containing the game name
 const DEV_STATE = "alpha" # The current development state

@@ -1,6 +1,6 @@
 extends Node
 
-# keys by section
+# Keys by section
 
 var GRAPHICS = {
 	"WindowX": 0,
