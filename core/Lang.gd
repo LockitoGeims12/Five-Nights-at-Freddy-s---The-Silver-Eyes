@@ -7,7 +7,7 @@ const LANGUAGE = "en"
 
 # Dict containing all the language keys
 
-var LANG = {
+var lang = {
 	"NEWGAME": "",
 	"OPTIONS": "",
 	"EXTRAS": "",
@@ -25,16 +25,16 @@ var LANG = {
 func _ready():
 	var file = File.new()
 	file.open("res://languages/" + str(LANGUAGE) + ".txt", file.READ)
-	LANG.NEWGAME = file.get_line()
-	LANG.OPTIONS = file.get_line()
-	LANG.EXTRAS = file.get_line()
-	LANG.QUIT = file.get_line()
-	LANG.VERSION = file.get_line()
-	LANG.UNKNOWN = file.get_line()
-	LANG.HOWTOPLAY1 = file.get_line()
-	LANG.HOWTOPLAY2 = file.get_line()
-	LANG.HOWTOPLAY3 = file.get_line()
-	LANG.DIALOG1 = file.get_line()
-	LANG.DIALOG2 = file.get_line()
-	LANG.DIALOG3 = file.get_line()
+	lang.NEWGAME = file.get_line()
+	lang.OPTIONS = file.get_line()
+	lang.EXTRAS = file.get_line()
+	lang.QUIT = file.get_line()
+	lang.VERSION = file.get_line()
+	lang.UNKNOWN = file.get_line()
+	lang.HOWTOPLAY1 = file.get_line()
+	lang.HOWTOPLAY2 = file.get_line()
+	lang.HOWTOPLAY3 = file.get_line()
+	lang.DIALOG1 = file.get_line()
+	lang.DIALOG2 = file.get_line()
+	lang.DIALOG3 = file.get_line()
 	file.close()
