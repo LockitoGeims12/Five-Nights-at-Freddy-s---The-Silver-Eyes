@@ -34,4 +34,7 @@ func _ready():
 	LANG.HOWTOPLAY1 = file.get_line()
 	LANG.HOWTOPLAY2 = file.get_line()
 	LANG.HOWTOPLAY3 = file.get_line()
+	LANG.DIALOG1 = file.get_line()
+	LANG.DIALOG2 = file.get_line()
+	LANG.DIALOG3 = file.get_line()
 	file.close()

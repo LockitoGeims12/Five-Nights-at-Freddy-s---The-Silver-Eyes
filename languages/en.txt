@@ -7,3 +7,6 @@ Unknown
 Move: W, A, S and D or key arrows and E to use
 Or you can use a controller
 Move: Left Stick or D-Pad buttons and Cross to use
+DIALOG1
+DIALOG2
+DIALOG3
