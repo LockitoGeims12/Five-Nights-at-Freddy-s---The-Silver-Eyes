@@ -9,15 +9,15 @@ var game_state = {
 
 # Paths
 var file_path = "user://game_state.dat"
-var hash_path = "user://game_content.hash"
+var hash_path = "user://game_state.hash"
 
 # Keys
 var file_key = "DSPbuyyWpfG6HhN6"
 var hash_key = "DZ2b4kDhXVGdHFBH"
 
 func _ready():
-	var file = File.new()
-	if file.file_exists(file_path):
+	var _file = File.new()
+	if _file.file_exists(file_path):
 		_load_state()
 	else:
 		_create_state()
