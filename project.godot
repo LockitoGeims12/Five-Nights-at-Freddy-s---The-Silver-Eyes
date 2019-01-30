@@ -28,6 +28,7 @@ GameSettings="*res://core/GameSettings.gd"
 GameState="*res://core/GameState.gd"
 Lang="*res://core/Lang.gd"
 RPGMath="*res://utils/RPG/RPGMath.gd"
+General="*res://utils/General.gd"
 
 [display]
 

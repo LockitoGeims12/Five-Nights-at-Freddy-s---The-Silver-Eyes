@@ -12,4 +12,4 @@ func _process(delta):
 	update()
 
 func _draw():
-	draw_rect(Rect2(0, 600, 1024, 700),Color(0.1, 0.1, 0.1, 0.25))
+	draw_rect(Rect2(0, 600, 1024, 700),Color(0, 0, 0, 0.5))
