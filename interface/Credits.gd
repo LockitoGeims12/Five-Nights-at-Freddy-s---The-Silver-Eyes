@@ -9,7 +9,7 @@ func _ready():
 	file.close()
 
 func _input(event):
-	if event.is_action_pressed("escape"):
+	if event.is_action_pressed("ESCAPE"):
 		get_tree().change_scene("res://interface/Menu.tscn")
 
 func _back_to_menu():
