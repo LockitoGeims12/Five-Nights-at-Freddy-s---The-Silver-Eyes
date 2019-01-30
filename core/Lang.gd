@@ -14,9 +14,6 @@ var lang = {
 	"QUIT": "",
 	"VERSION": "",
 	"UNKNOWN": "",
-	"HOWTOPLAY1": "",
-	"HOWTOPLAY2": "",
-	"HOWTOPLAY3": "",
 	"DIALOG1": "",
 	"DIALOG2": "",
 	"DIALOG3": ""
@@ -31,9 +28,6 @@ func _ready():
 	lang.QUIT = file.get_line()
 	lang.VERSION = file.get_line()
 	lang.UNKNOWN = file.get_line()
-	lang.HOWTOPLAY1 = file.get_line()
-	lang.HOWTOPLAY2 = file.get_line()
-	lang.HOWTOPLAY3 = file.get_line()
 	lang.DIALOG1 = file.get_line()
 	lang.DIALOG2 = file.get_line()
 	lang.DIALOG3 = file.get_line()
