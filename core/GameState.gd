@@ -6,8 +6,14 @@ var game_state = {
 	"PLAYER_XP": 0,
 	"MAP": "Forest"
 	}
-var file_path = "user://game_state.dat" # the game data file path
-var key = "DSPbuyyWpfG6HhN6" # a random key
+
+# Paths
+var file_path = "user://game_state.dat"
+var hash_path = "user://game_content.hash"
+
+# Keys
+var file_key = "DSPbuyyWpfG6HhN6"
+var hash_key = "DZ2b4kDhXVGdHFBH"
 
 func _ready():
 	var file = File.new()
@@ -18,8 +24,7 @@ func _ready():
 
 func _load_state():
 	var file = File.new()
-	file.open_encrypted_with_pass(file_path, File.READ, key)
-	
+	file.open_encrypted_with_pass(file_path, File.READ, file_key)
 	game_state.PLAYER_NAME = file.get_var()
 	game_state.PLAYER_LEVEL = file.get_var()
 	game_state.PLAYER_XP = file.get_var()
@@ -27,9 +32,11 @@ func _load_state():
 	file.close()
 
 func _create_state():
-	var file = File.new()
-	file.open_encrypted_with_pass(file_path, File.WRITE, key)
+	if OS.has_environment("USERNAME"):
+		game_state.PLAYER_NAME = OS.get_environment("USERNAME")
 	
+	var file = File.new()
+	file.open_encrypted_with_pass(file_path, File.WRITE, file_key)
 	file.store_var(game_state.PLAYER_NAME)
 	file.store_var(game_state.PLAYER_LEVEL)
 	file.store_var(game_state.PLAYER_XP)

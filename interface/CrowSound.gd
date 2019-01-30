@@ -1,9 +1,9 @@
 extends AudioStreamPlayer
 
-export(Vector2) var var_time = Vector2(15, 40)
+export(Vector2) var var_time = Vector2(15, 35)
 export(float) var var_pitch_scale = 0.1
 export(float) var var_pan = 0.5
-export(Vector2) var var_volume = Vector2(-30, -40)
+export(Vector2) var var_volume = Vector2(-28, -35)
 
 func _on_Timer_timeout():
 	var idx = AudioServer.get_bus_index("Crow")
