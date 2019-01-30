@@ -1,45 +1,132 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://interface/WelcomeScreen.gd" type="Script" id=1]
 [ext_resource path="res://gamejolt-logo-dark-2x.64074b2c.png" type="Texture" id=2]
+[ext_resource path="res://fonts/default_font_26.tres" type="DynamicFont" id=3]
+[ext_resource path="res://sounds/game_open.wav" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.297302, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_disable_input"
+} ]
+}
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "Show"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Logo:position")
+tracks/0/path = NodePath("Container:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 0.297302, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 512, 800 ), Vector2( 512, 192 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Logo:modulate")
+tracks/1/path = NodePath("Container:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 0, 768 ), Vector2( 0, 0 ) ]
 }
 
 [node name="WelcomeScreen" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Logo" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 512, 800 )
+[node name="Container" type="Node2D" parent="."]
+
+[node name="Logo" type="Sprite" parent="Container"]
+position = Vector2( 512, 192 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Container"]
+margin_right = 1024.0
+margin_bottom = 768.0
+custom_fonts/font = ExtResource( 3 )
+text = "
+
+Available on
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please, share this game with your friends."
+align = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Show"
+anims/Hide = SubResource( 2 )
 anims/Show = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "FX"
 
