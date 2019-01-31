@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/ControllableActor.gd" type="Script" id=2]
+[ext_resource path="res://actors/FollowPlayer.tscn" type="PackedScene" id=3]
+
+[node name="ControllableActor" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="FollowPlayer" parent="." index="1" instance=ExtResource( 3 )]
+

@@ -1,42 +1,39 @@
 extends "res://actors/Actor.gd"
 
-var level = 1
-var xp = 0
-
 func _input(event):
-	if event.is_action_pressed("move_up"):
+	if event.is_action_pressed("MOVE_UP"):
 		direction.y = -1
 		state = STATES.WALKING
 		$ActorSprite.animation = "walk_up"
-	elif event.is_action_pressed("move_down"):
+	elif event.is_action_pressed("MOVE_DOWN"):
 		direction.y = 1
 		state = STATES.WALKING
 		$ActorSprite.animation = "walk_down"
-	elif event.is_action_pressed("move_left"):
+	elif event.is_action_pressed("MOVE_LEFT"):
 		direction.x = -1
 		state = STATES.WALKING
 		$ActorSprite.animation = "walk_up"
 		$ActorSprite.scale.x = -0.1
-	elif event.is_action_pressed("move_right"):
+	elif event.is_action_pressed("MOVE_RIGHT"):
 		direction.x = 1
 		state = STATES.WALKING
 		$ActorSprite.animation = "walk_right"
 		$ActorSprite.scale.x = 0.1
-	elif event.is_action_released("move_up"):
+	elif event.is_action_released("MOVE_UP"):
 		direction.y = 0
 		$ActorSprite.animation = ""
 		state = STATES.IDLE
 		$ActorSprite.animation = "up"
-	elif event.is_action_released("move_down"):
+	elif event.is_action_released("MOVE_DOWN"):
 		direction.y = 0
 		state = STATES.IDLE
 		$ActorSprite.animation = "down"
-	elif event.is_action_released("move_left"):
+	elif event.is_action_released("MOVE_LEFT"):
 		direction.x = 0
 		state = STATES.IDLE
 		$ActorSprite.animation = "right"
 		$ActorSprite.scale.x = -0.1
-	elif event.is_action_released("move_right"):
+	elif event.is_action_released("MOVE_RIGHT"):
 		direction.x = 0
 		state = STATES.IDLE
 		$ActorSprite.animation = "right"
