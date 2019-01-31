@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/forgot.png-2f18fa21bdeff84d9aaff56da7fd60ed.stex"
+path="res://.import/stand.png-c7b995b81379d071c4ca286129f1eaa8.stex"
 
 [deps]
 
-source_file="res://sprites/spreak/forgot.png"
-dest_files=[ "res://.import/forgot.png-2f18fa21bdeff84d9aaff56da7fd60ed.stex" ]
+source_file="res://sprites/freak/stand.png"
+dest_files=[ "res://.import/stand.png-c7b995b81379d071c4ca286129f1eaa8.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
