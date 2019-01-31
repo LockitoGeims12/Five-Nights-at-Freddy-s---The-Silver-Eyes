@@ -13,7 +13,8 @@ func _enable():
 
 func _on_Button_button_down():
 	if active:
-		get_tree().change_scene("res://interface/Credits.tscn")
+		var _err = get_tree().change_scene("res://interface/Credits.tscn")
+		print(_err)
 
 func _on_Button_mouse_entered():
 	if active:

@@ -20,7 +20,8 @@ func _set_lighting(type):
 			_alpha = 128
 		LIGHTINGTYPES.WITHOUT:
 			_alpha = 64
-	$Occular.modulate.a = _alpha
+	# NOTE: write a replace code here
+	#$Occular.modulate.a = _alpha
 
 func _get_lighting():
 	return(LightingType)

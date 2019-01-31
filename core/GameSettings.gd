@@ -56,8 +56,8 @@ func _apply_settings():
 	
 	var _fx_bus = AudioServer.get_bus_index("FX")
 	var _music_bus = AudioServer.get_bus_index("Music")
-	AudioServer.set_bus_volume_db(_fx_bus, General._float2db(SOUNDS.FXVolume))
-	AudioServer.set_bus_volume_db(_music_bus, General._float2db(SOUNDS.MusicVolume))
+	AudioServer.set_bus_volume_db(_fx_bus, linear2db(SOUNDS.FXVolume))
+	AudioServer.set_bus_volume_db(_music_bus, linear2db(SOUNDS.MusicVolume))
 
 func _update_settings():
 	WINDOW.WindowX = OS.window_position.x
