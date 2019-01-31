@@ -3,7 +3,8 @@
 [ext_resource path="res://objects/MenuPlayerData.gd" type="Script" id=1]
 [ext_resource path="res://fonts/default_font_18.tres" type="DynamicFont" id=2]
 
-[node name="MenuPlayerData" type="Node"]
+[node name="MenuPlayerData" type="Node2D"]
+z_index = 200
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]

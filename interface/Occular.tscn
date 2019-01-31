@@ -4,6 +4,7 @@
 
 [node name="Occular" type="Sprite"]
 scale = Vector2( 2.56, 1.92 )
+z_index = 100
 texture = ExtResource( 1 )
 centered = false
 
