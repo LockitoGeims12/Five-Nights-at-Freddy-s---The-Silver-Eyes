@@ -2,6 +2,15 @@ extends Label
 
 var active = false
 
+func _ready():
+	if AutoLoad.welcome_shown:
+		active = true
+	$Button.disabled = !active
+
+func _enable():
+	active = true
+	$Button.disabled = !active
+
 func _on_Button_button_down():
 	if active:
 		get_tree().change_scene("res://interface/Credits.tscn")

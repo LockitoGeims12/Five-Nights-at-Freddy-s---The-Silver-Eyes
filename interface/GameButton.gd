@@ -4,7 +4,13 @@ var active = false
 var ButtonColors = {"LIGHT": Color(1, 1, 1), "MID_DARK": Color(0.5, 0.5, 0.5), "DARK": Color(0.2, 0.2, 0.2)}
 
 func _ready():
+	if AutoLoad.welcome_shown:
+		active = true
 	$GameButton.disabled = !active
+
+func _enable():
+	active = true
+	$GameButton.disabled = false
 
 func _on_Button_mouse_down():
 	if active:

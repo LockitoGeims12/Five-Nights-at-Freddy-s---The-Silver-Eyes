@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/default_font_26.tres" type="DynamicFont" id=3]
 [ext_resource path="res://sounds/game_open.wav" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Hide"
 length = 0.5
@@ -50,9 +50,8 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "Show"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container:modulate")
 tracks/0/interp = 1
@@ -122,11 +121,12 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Show"
-anims/Hide = SubResource( 2 )
-anims/Show = SubResource( 1 )
+anims/Hide = SubResource( 3 )
+anims/Show = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -8.0
+autoplay = true
 bus = "FX"
 

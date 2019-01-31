@@ -4,5 +4,5 @@
 
 [node name="CarEngineSound" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -20.0
+volume_db = -23.0
 

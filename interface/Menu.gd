@@ -3,7 +3,11 @@ extends Node
 # This is the first scene
 
 func _ready():
-	pass
+	if not AutoLoad.welcome_shown:
+		var _res = AutoLoad.RESOURCES.WELCOME_SCREEN
+		var _instance = _res.instance()
+		add_child(_instance)
+		AutoLoad.welcome_shown = true
 
 func _input(event):
 	# NOTE: this input method is temporary
