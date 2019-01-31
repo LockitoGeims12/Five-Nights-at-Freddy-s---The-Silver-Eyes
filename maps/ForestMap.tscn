@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://maps/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://maps/ForestMap.gd" type="Script" id=2]
 [ext_resource path="res://sprites/tiles/Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://objects/ForestWindSound.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/CrowSound.tscn" type="PackedScene" id=5]
+[ext_resource path="res://interface/ForestAmbientSound.tscn" type="PackedScene" id=6]
 
 [node name="ForestMap" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -14,4 +17,10 @@ tile_data = PoolIntArray( -655360, 0, 0, -655359, 0, 0, -655358, 0, 0, -655357, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ForestWindSound" parent="." index="1" instance=ExtResource( 4 )]
+
+[node name="CrowSound" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="ForestAmbientSound" parent="." index="3" instance=ExtResource( 6 )]
 
