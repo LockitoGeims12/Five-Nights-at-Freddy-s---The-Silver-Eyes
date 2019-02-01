@@ -2,9 +2,9 @@
 
 [ext_resource path="res://objects/BrokenCar.gd" type="Script" id=1]
 [ext_resource path="res://particles/Smoke.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/CarLight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/car/01.png" type="Texture" id=4]
-[ext_resource path="res://sounds/broken_car_circuit.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/broken_car_circuit.wav" type="AudioStream" id=3]
+[ext_resource path="res://objects/CarLight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/car/01.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,20 +16,6 @@ script = ExtResource( 1 )
 [node name="Smoke" parent="." instance=ExtResource( 2 )]
 position = Vector2( 50, 0 )
 
-[node name="Light" parent="." instance=ExtResource( 3 )]
-position = Vector2( 320, 0 )
-
-[node name="CarSprite" type="Sprite" parent="."]
-position = Vector2( 0, -20 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 10 )
-shape = SubResource( 1 )
-
 [node name="LightTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
@@ -37,8 +23,22 @@ autostart = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 80, 0 )
-stream = ExtResource( 5 )
+stream = ExtResource( 3 )
 volume_db = -15.0
 bus = "FX"
+
+[node name="Light" parent="." instance=ExtResource( 4 )]
+position = Vector2( 320, 0 )
+
+[node name="CarSprite" type="Sprite" parent="."]
+position = Vector2( 0, -20 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10 )
+shape = SubResource( 1 )
 
 [connection signal="timeout" from="LightTimer" to="." method="_on_LightTimer_timeout"]
