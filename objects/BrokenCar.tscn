@@ -27,7 +27,7 @@ stream = ExtResource( 3 )
 volume_db = -15.0
 max_distance = 1000.0
 attenuation = 2.0
-bus = "FX"
+bus = "BrokenCarLightSound"
 
 [node name="Light" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, 0 )
