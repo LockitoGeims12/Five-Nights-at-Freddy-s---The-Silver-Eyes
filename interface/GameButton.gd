@@ -4,6 +4,7 @@ var active = false
 var ButtonColors = {"LIGHT": Color(1, 1, 1), "MID_DARK": Color(0.5, 0.5, 0.5), "DARK": Color(0.2, 0.2, 0.2)}
 
 func _ready():
+	z_index = 150
 	if AutoLoad.welcome_shown:
 		active = true
 	$GameButton.disabled = !active

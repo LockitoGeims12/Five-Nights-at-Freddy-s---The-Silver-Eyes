@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://interface/Menu.gd" type="Script" id=1]
 [ext_resource path="res://interface/SkyBackground.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://interface/ForestAmbientSound.tscn" type="PackedScene" id=18]
 [ext_resource path="res://interface/MenuTheme.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objects/ForestWindSound.tscn" type="PackedScene" id=20]
+[ext_resource path="res://particles/Rain.tscn" type="PackedScene" id=21]
 
 [node name="Menu" type="Node"]
 script = ExtResource( 1 )
@@ -73,4 +74,6 @@ autoplay = true
 volume_db = -8.0
 
 [node name="ForestWindSound" parent="." instance=ExtResource( 20 )]
+
+[node name="Rain" parent="." instance=ExtResource( 21 )]
 
