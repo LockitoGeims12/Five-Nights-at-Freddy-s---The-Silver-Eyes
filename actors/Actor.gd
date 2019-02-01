@@ -7,7 +7,7 @@ var direction = Vector2()
 var velocity = 200
 
 func _physics_process(delta):
-	move_and_slide(direction * velocity * delta)
+	move_and_slide(direction * velocity)
 
 func _input(event):
 	if direction.y == -1:
