@@ -18,6 +18,7 @@ func _process(delta):
 	translate(direction * velocity * delta)
 
 func _on_Timer_timeout():
+	$AudioStreamPlayer2D.play()
 	direction = Vector2(1, 0)
 
 func _on_Delete_timeout():

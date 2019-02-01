@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/Freak.gd" type="Script" id=1]
 [ext_resource path="res://sprites/freak/walk_01.png" type="Texture" id=2]
 [ext_resource path="res://sprites/freak/walk_02.png" type="Texture" id=3]
+[ext_resource path="res://sounds/car_engine.wav" type="AudioStream" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -19,7 +20,6 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -27,9 +27,17 @@ one_shot = true
 autostart = true
 
 [node name="Delete" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+pitch_scale = 8.0
+max_distance = 1000.0
+attenuation = 2.0
+bus = "FreakScream"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Delete" to="." method="_on_Delete_timeout"]
