@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20x.png-2b4611b21a217370f1bd8c53c26e81e0.stex"
+path="res://.import/200x.png-6f4f043350d00ca4b31c69872849192c.stex"
 
 [deps]
 
-source_file="res://icons/20x.png"
-dest_files=[ "res://.import/20x.png-2b4611b21a217370f1bd8c53c26e81e0.stex" ]
+source_file="res://icons/new/200x.png"
+dest_files=[ "res://.import/200x.png-6f4f043350d00ca4b31c69872849192c.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -3,25 +3,12 @@
 
 [Graphics]
 
-WindowX=0 // window x position
-WindowY=0 // window y position
+X=0 // window x position
+Y=0 // window y position
 Width=1024 // resolution width
 Height=768 // resolution height
-EnableShaders=false // enable or disable shaders
-ShadowMapping=true // enable or disable shadow mapping (experimental)
 
 [Sounds]
 
-MaxFXPolyphony=16 // max sounds per time
-FXVolume=0.7 // volume of all sound effects in the game
-MusicVolume=0.6 // volume of all musics in the game
-MaxAudioProcessing=8 // max sound effects applied over the audio
-EnableReverb=true // enable or disable reverb effects
-
-[Game]
-
-Difficulty="easy" // game difficulty (no change for now)
-
-[Input]
-
-DefaultSystem=true // if there are no modifications in the input settings
+FXVolume=1.0 // volume of all sound effects in the game
+MusicVolume=1.0 // volume of all musics in the game

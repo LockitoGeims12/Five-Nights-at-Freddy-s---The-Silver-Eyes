@@ -1,7 +1,5 @@
 extends Node
 
-# This is the first scene
-
 func _ready():
 	if not AutoLoad.welcome_shown:
 		var _res = AutoLoad.RESOURCES.WELCOME_SCREEN
