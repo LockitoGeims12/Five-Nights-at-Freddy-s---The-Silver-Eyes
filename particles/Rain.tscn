@@ -2,23 +2,23 @@
 
 [ext_resource path="res://particles/rain_01.ogg" type="AudioStream" id=1]
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=1]
 
 colors = PoolColorArray( 0.658824, 1, 0.976471, 1, 1, 1, 1, 0.392157 )
 
-[sub_resource type="GradientTexture" id=5]
+[sub_resource type="GradientTexture" id=2]
 
-gradient = SubResource( 4 )
+gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=1]
+[sub_resource type="Curve" id=3]
 
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.4692 ), -1.30712, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=2]
+[sub_resource type="CurveTexture" id=4]
 
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=5]
 
 emission_shape = 2
 emission_box_extents = Vector3( 512, 1, 1 )
@@ -36,10 +36,11 @@ angle = 45.0
 angle_random = 0.5
 scale = 4.0
 scale_random = 0.5
-scale_curve = SubResource( 2 )
-color_ramp = SubResource( 5 )
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
 
 [node name="Rain" type="Particles2D"]
+modulate = Color( 1, 1, 1, 0.392157 )
 position = Vector2( 512, 0 )
 z_index = 200
 z_as_relative = false
@@ -47,7 +48,7 @@ amount = 40
 lifetime = 2.5
 speed_scale = 4.0
 randomness = 1.0
-process_material = SubResource( 3 )
+process_material = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

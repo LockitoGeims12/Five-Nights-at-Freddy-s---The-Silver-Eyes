@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 enum STATES { IDLE, WALKING, DOING_ACTION, }
 var state = STATES.IDLE
