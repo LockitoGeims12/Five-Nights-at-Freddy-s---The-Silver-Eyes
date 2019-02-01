@@ -10,7 +10,7 @@
 [ext_resource path="res://sprites/tiles/transition_6.png" type="Texture" id=8]
 [ext_resource path="res://sprites/tiles/transition_7.png" type="Texture" id=9]
 [ext_resource path="res://sprites/tiles/transition_8.png" type="Texture" id=10]
-[ext_resource path="res://sprites/other stuff/white_base.png" type="Texture" id=11]
+[ext_resource path="res://sprites/tiles/collision_block.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -64,23 +64,13 @@ texture = ExtResource( 10 )
 centered = false
 
 [node name="collision_block" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 640, 0 )
-scale = Vector2( 0.64, 0.64 )
 texture = ExtResource( 11 )
 centered = false
 
-[node name="Area2D" type="StaticBody2D" parent="collision_block"]
-position = Vector2( -600, 0 )
-scale = Vector2( 1.5625, 1.5625 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="StaticBody2D" type="StaticBody2D" parent="collision_block"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_block/Area2D"]
-position = Vector2( 416, 32 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_block/StaticBody2D"]
+position = Vector2( 32, 32 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 

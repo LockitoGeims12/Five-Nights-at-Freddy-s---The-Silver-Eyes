@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 enum STATES { IDLE, WALKING, DOING_ACTION, }
 var state = STATES.IDLE
@@ -6,8 +6,8 @@ var state = STATES.IDLE
 var direction = Vector2()
 var velocity = 200
 
-func _process(delta):
-	translate(direction * velocity * delta)
+func _physics_process(delta):
+	move_and_collide(direction * velocity * delta)
 
 func _input(event):
 	if direction.y == -1:
