@@ -4,4 +4,4 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	pass
+	global_position = $"/root/ForestMap/YSort/ControllableActor/FollowPlayer".global_position
