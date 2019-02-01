@@ -4,5 +4,6 @@
 [ext_resource path="res://interface/ExtrasButton.gd" type="Script" id=2]
 
 [node name="ExtrasButton" index="0" instance=ExtResource( 1 )]
+z_index = 100
 script = ExtResource( 2 )
 

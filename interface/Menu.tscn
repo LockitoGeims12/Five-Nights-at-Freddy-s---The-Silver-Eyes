@@ -42,6 +42,7 @@ position = Vector2( 140, 660 )
 modulate = Color( 1, 1, 1, 0.752941 )
 
 [node name="GameTitle" parent="." instance=ExtResource( 9 )]
+position = Vector2( 520, 110 )
 
 [node name="NewGameButton" parent="." instance=ExtResource( 10 )]
 position = Vector2( 800, 300 )

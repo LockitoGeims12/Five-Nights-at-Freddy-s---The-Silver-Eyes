@@ -3,10 +3,16 @@
 [ext_resource path="res://fonts/default_font_26.tres" type="DynamicFont" id=1]
 [ext_resource path="res://interface/GameTitle.gd" type="Script" id=2]
 
-[node name="GameTitle" type="Label"]
+[node name="GameTitle" type="Node2D"]
+z_index = 100
+
+[node name="GameTitle" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -568.0
+margin_left = -200.0
+margin_top = -40.0
+margin_right = 191.0
+margin_bottom = 37.0
 custom_fonts/font = ExtResource( 1 )
 text = "Five Nights at Freddy's
 The Silver Eyes"
@@ -14,7 +20,7 @@ align = 1
 valign = 1
 script = ExtResource( 2 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="GameTitle"]
 modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
 margin_left = 290.691
@@ -22,6 +28,6 @@ margin_top = 43.0
 margin_right = 730.691
 margin_bottom = 143.0
 
-[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
-[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
-[connection signal="mouse_exited" from="Button" to="." method="_on_Button_mouse_exited"]
+[connection signal="button_down" from="GameTitle/Button" to="GameTitle" method="_on_Button_button_down"]
+[connection signal="mouse_entered" from="GameTitle/Button" to="GameTitle" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="GameTitle/Button" to="GameTitle" method="_on_Button_mouse_exited"]
