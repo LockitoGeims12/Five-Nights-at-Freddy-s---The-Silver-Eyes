@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/ObjectEvent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/ObjectEventArea.gd" type="Script" id=2]
+
+[node name="ObjectEventArea" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
