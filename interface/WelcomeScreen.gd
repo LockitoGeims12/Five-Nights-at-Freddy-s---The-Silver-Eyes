@@ -15,4 +15,4 @@ func _exit_tree():
 	$"/root/Menu/OptionsButton"._enable()
 	$"/root/Menu/ExtrasButton"._enable()
 	$"/root/Menu/QuitButton"._enable()
-	$"/root/Menu/GameTitle"._enable()
+	$"/root/Menu/GameTitle/GameTitle"._enable()
