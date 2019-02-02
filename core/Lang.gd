@@ -16,7 +16,8 @@ var lang = {
 	"UNKNOWN": "",
 	"DIALOG1": "",
 	"DIALOG2": "",
-	"DIALOG3": ""
+	"DIALOG3": "",
+	"FALLING_TREE_MESSAGE": ""
 	}
 
 func _ready():
@@ -31,4 +32,5 @@ func _ready():
 	lang.DIALOG1 = file.get_line()
 	lang.DIALOG2 = file.get_line()
 	lang.DIALOG3 = file.get_line()
+	lang.FALLING_TREE_MESSAGE = file.get_line()
 	file.close()

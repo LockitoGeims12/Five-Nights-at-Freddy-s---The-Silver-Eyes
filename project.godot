@@ -29,6 +29,7 @@ GameState="*res://core/GameState.gd"
 Lang="*res://core/Lang.gd"
 RPGMath="*res://utils/RPG/RPGMath.gd"
 General="*res://utils/General.gd"
+GamePause="*res://objects/GamePause.gd"
 
 [display]
 

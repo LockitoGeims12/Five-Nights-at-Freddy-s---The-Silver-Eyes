@@ -7,6 +7,6 @@ func _add_hint(text: String):
 	if not AutoLoad.showing_hint:
 		var _myClass = AutoLoad.RESOURCES.HUDHINT
 		var _myInstance = _myClass.instance()
-		_myInstance.local_position.y = 256
 		_myInstance.text = text
+		_myInstance.global_position.y = 256
 		add_child(_myInstance)

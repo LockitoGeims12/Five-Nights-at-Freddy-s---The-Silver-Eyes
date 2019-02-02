@@ -5,9 +5,11 @@ var state = STATES.IDLE
 
 var direction = Vector2()
 var velocity = 200
+var can_move = true
 
 func _physics_process(delta):
-	move_and_slide(direction * velocity)
+	if can_move:
+		move_and_slide(direction * velocity)
 
 func _input(event):
 	if direction.y == -1:

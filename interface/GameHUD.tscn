@@ -6,11 +6,8 @@
 [node name="GameHUD" type="Node2D"]
 z_index = 150
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="HUDHint" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 256 )
-text = "Controll"
+text = "Controls are show here"
 
