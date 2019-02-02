@@ -5,4 +5,4 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body == $"/root/ForestMap/YSort/ControllableActor":
-		OS.alert("It's done!")
+		$"/root/ForestMap/GameHUD"._add_hint("A falling tree falls over you")

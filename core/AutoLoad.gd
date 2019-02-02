@@ -10,7 +10,9 @@ const RESOURCES = {
 	"WELCOME_SCREEN": preload("res://interface/WelcomeScreen.tscn"),
 	"OPTIONS": preload("res://interface/Options.tscn"),
 	"EXTRAS": preload("res://interface/Extras.tscn"),
-	"FOREST_MAP": preload("res://maps/ForestMap.tscn")
+	"FOREST_MAP": preload("res://maps/ForestMap.tscn"),
+	"HUDHINT": preload("res://interface/HUDHint.tscn")
 	}
 
+var showing_hint = false
 var welcome_shown = false
