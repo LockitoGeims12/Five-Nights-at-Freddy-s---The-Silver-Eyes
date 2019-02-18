@@ -15,4 +15,10 @@ const RESOURCES = {
 	}
 
 var showing_hint = false
-var welcome_shown = false
+var welcome_shown = false setget set_welcome_shown, is_welcome_shown
+
+func set_welcome_shown(value: bool):
+	welcome_shown = value
+
+func is_welcome_shown():
+	return welcome_shown
