@@ -1,8 +1,9 @@
 extends "res://interface/GameButton.gd"
 
+onready var root = $"/root/Menu"
+
 func _ready():
 	$ButtonText.text = Lang.lang.NEWGAME
 
 func _on_Button_mouse_down():
-	var _err = get_tree().change_scene_to(AutoLoad.RESOURCES.FOREST_MAP)
-	print(_err)
+	(root as Node).new_game()
