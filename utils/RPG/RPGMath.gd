@@ -1,18 +1,13 @@
 extends Node
 
-# This class is used when the game needs to calculate some RPG data like XP
+static func _damage(attack, defense):
+	var damage = attack * ( 100.0 / (100.0 + defense))
+	return damage # Calculates at damage and returns it
 
-func _damage(attack, defense):
-	var _thisDamage = attack * ( 100.0 / (100.0 + defense))
-	print("Damage: " + str(_thisDamage))
-	return _thisDamage # Calculates damage and returns it
+static func _next_level_xp(current_level):
+	var xp = (currentLevel * 500) + (currentLevel * 250)
+	return xp # Calculates the xp to the next level
 
-func _next_level_xp(currentLevel):
-	var _thisNextXP = (currentLevel * 500) + (currentLevel * 250)
-	print("Next level XP: " + str(_thisNextXP))
-	return _thisNextXP # Calculates the xp to the next level
-
-func _xp(playerLevel, enemyLevel):
-	var _thisXP = (playerLevel * enemyLevel) * 100 + (enemyLevel - playerLevel) * 100
-	print("XP: " + str(_thisXP))
-	return _thisXP # Calculates won xp when the player won a monster and returns it
+static func _xp(player_level, enemy_level):
+	var xp = (player_level * enemy_level) * 100 + (enemyLevel - playerLevel) * 100
+	return xp # Calculates won xp when the player won a monster and returns it

@@ -1,6 +1,0 @@
-Novo Jogo
-Opcoes
-Extras
-Sair
-Versao
-Desconhecido

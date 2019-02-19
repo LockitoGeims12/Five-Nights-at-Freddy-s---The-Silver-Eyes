@@ -85,6 +85,10 @@ ESCAPE={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://languages/en.en.translation", "res://languages/po.en.translation", "res://languages/pt.en.translation" )
+
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )
