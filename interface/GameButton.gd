@@ -1,7 +1,10 @@
 extends Node2D
 
+onready var root: Node = $"/root/Menu"
+onready var button: Button = $"ButtonText"
+
 var active = false
-var ButtonColors = {"LIGHT": Color(1, 1, 1), "MID_DARK": Color(0.5, 0.5, 0.5), "DARK": Color(0.2, 0.2, 0.2)}
+var ButtonColors = {"LIGHT": Color.white, "MID_DARK": Color(0.5, 0.5, 0.5), "DARK": Color(0.2, 0.2, 0.2)}
 
 func _ready():
 	z_index = 150
