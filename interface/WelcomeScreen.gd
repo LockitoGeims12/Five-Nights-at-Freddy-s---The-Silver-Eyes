@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var root = $"/root/Menu"
 onready var new_game_button = $"/root/Menu/NewGameButton"
 onready var options_button = $"/root/Menu/OptionsButton"
 onready var extras_button = $"/root/Menu/ExtrasButton"
@@ -22,3 +23,4 @@ func _exit_tree():
 	extras_button._enable()
 	quit_button._enable()
 	game_title._enable()
+	root.set_process_input(true)

@@ -1,6 +1,4 @@
 extends Node2D
 
-# Sets the version showed in the menu
-
 func _ready():
-	$VersionText.text = Lang.lang.VERSION + " " + AutoLoad.GAME_VERSION
+	$"VersionText".text = tr("LABEL_MENU_VERSION") + " " + AutoLoad.GAME_VERSION
