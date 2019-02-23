@@ -15,12 +15,8 @@ TCS
 Sounds:
 BlackBearGames
 
-Voice acting:
-None
 
-
-Patreons:
-None
+Made with Godot Engine
 
 
 Many thanks to all who have supported and still support this project.

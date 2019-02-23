@@ -1,10 +1,13 @@
-,en
+,pt
 LABEL_LOADING, "Carregando..."
 LABEL_MENU_NEWGAME, "Novo Jogo"
 LABEL_MENU_OPTIONS, "Opções"
 LABEL_MENU_EXTRAS, "Extras"
 LABEL_MENU_QUIT, "Sair"
 LABEL_MENU_VERSION, "Versão"
-LABEL_GAME_HINT_1, ""
+LABEL_GAME_HINT_1, "Use W, A, S, D para se mover"
+LABEL_GAME_HINT_2, "Ou você pode usar as setas"
+LABEL_GAME_HINT_3, "Caso possua um controlador"
+LABEL_GAME_HINT_4, "Você também poderá usá-lo"
 LABEL_FOREST_FALLING_TREE, "Uma árvore caiu sobre você"
 LABEL_DIALOGUE_UNKNOWN, "Desconhecido"

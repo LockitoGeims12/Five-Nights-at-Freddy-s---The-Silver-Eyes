@@ -5,6 +5,8 @@
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 script = ExtResource( 1 )
 
+[node name="SongPreloader" type="ResourcePreloader" parent="."]
+
 [node name="PlayerTimer" type="Timer" parent="."]
 wait_time = 10.0
 

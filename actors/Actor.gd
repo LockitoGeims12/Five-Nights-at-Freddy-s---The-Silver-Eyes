@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 enum STATES { IDLE, WALKING, DOING_ACTION, }
-var state = STATES.IDLE
+var state: int = STATES.IDLE
 
-var direction = Vector2()
-var velocity = 200
-var can_move = true
+var direction: Vector2 = Vector2()
+var velocity: float = 200
+var can_move: bool = true
 
 func _physics_process(delta):
 	if can_move:

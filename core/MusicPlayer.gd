@@ -1,13 +1,12 @@
 extends AudioStreamPlayer
 
+onready var player_timer: Timer = $"PlayerTimer"
+
 func _ready():
-	# starts the current music
 	play()
-	$PlayerTimer.start()
+	player_timer.start()
 
 func _check():
-	# check if the music is playing
-	
 	if !playing:
 		stream = AudioStream.new()
 		play()

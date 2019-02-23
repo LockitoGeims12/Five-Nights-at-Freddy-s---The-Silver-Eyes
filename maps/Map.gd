@@ -1,27 +1,26 @@
 extends Node2D
 
-# This class is just a base class for all maps
-# It adds lighting support to maps that controls the ocullar alpha
+enum LIGHTING_TYPE { DARK, MID_DARK, LIGHT, WITHOUT}
+var lighting_type setget set_lighting, get_lighting
 
-enum LIGHTINGTYPES { DARK, MID_DARK, LIGHT, WITHOUT}
-var LightingType setget _set_lighting, _get_lighting
+onready var occular: Sprite = $"Occular"
 
 func _ready():
-	_set_lighting(LIGHTINGTYPES.WITHOUT)
+	set_lighting(LIGHTINGTYPES.WITHOUT)
 
-func _set_lighting(type):
-	var _alpha
+func set_lighting(type: int):
+	var alpha
 	match type:
 		LIGHTINGTYPES.DARK:
-			_alpha = 255
+			alpha = 255
 		LIGHTINGTYPES.MID_DARK:
-			_alpha = 192
+			alpha = 192
 		LIGHTINGTYPES.LIGHT:
-			_alpha = 128
+			alpha = 128
 		LIGHTINGTYPES.WITHOUT:
-			_alpha = 64
+			alpha = 64
 	# NOTE: write a replace code here
-	#$Occular.modulate.a = _alpha
+	occular.modulate.a = _alpha
 
-func _get_lighting():
-	return(LightingType)
+func get_lighting() -> int:
+	return(lighting_type)

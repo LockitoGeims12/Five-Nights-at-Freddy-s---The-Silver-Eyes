@@ -1,9 +1,9 @@
 extends Node2D
 
-var GamePreloader = preload("res://core/GamePreloader.tscn").instance()
-var game_preloader
+var GamePreloader: ResourcePreloader = preload("res://core/GamePreloader.tscn").instance()
+var game_preloader: ResourcePreloader
 
-onready var root = $"/root/Menu"
+onready var root: Node = $"/root/Menu"
 onready var poll: Timer = $"Poll"
 
 var progress: float = 0
@@ -15,7 +15,7 @@ signal load_finished
 func _ready():
 	root.add_child(GamePreloader)
 	game_preloader = $"/root/Menu/GamePreloader"
-	
+
 	connect("load_finished", self, "_on_load_finished")
 	poll.start()
 

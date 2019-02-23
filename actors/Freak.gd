@@ -2,9 +2,9 @@ extends Node2D
 
 export(int) var mode = 0
 
-const velocity = 1000
+const VELOCITY = 1000
 
-var direction = Vector2()
+var direction: vector2 = Vector2()
 
 func _ready():
 	match mode:
@@ -15,7 +15,7 @@ func _ready():
 			$Delete.queue_free()
 
 func _process(delta):
-	translate(direction * velocity * delta)
+	translate(direction * VELOCITY * delta)
 
 func _on_Timer_timeout():
 	$AudioStreamPlayer2D.play()
